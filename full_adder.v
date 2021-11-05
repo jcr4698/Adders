@@ -8,7 +8,7 @@
 // Module Name: full_adder
 // Project Name: Lab 5
 // Target Devices: Basys3
-// Description: Designing, simulating, and testing the Ripple Carry Adder
+// Description: 1-bit full_adder for the Ripple Carry Adder
 //
 //////////////////////////////////////////////////////////////////////////////////
 

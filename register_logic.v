@@ -1,22 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: UT ECE
+// Engineer: Jan C. Rubio
 // 
-// Create Date: 11/03/2021 01:25:52 AM
-// Design Name: 
+// Create Date: 11/03/2021 01:27:39 AM
+// Design Name: RCA/CLA Register Logic
 // Module Name: register_logic
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Project Name: Lab 5
+// Target Devices: Basys3
+// Description: Signal and enable for Adders
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -37,7 +30,7 @@ end
 
 always @(*)
 begin
-Q <= REG[4:0];
+    Q <= REG[4:0];
 end
 
 endmodule

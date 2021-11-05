@@ -1,22 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: UT ECE
+// Engineer: Jan C. Rubio
 // 
-// Create Date: 11/05/2021 12:19:00 AM
-// Design Name: 
-// Module Name: tb_RCA_4bits
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Create Date: 11/03/2021 01:27:39 AM
+// Design Name: Ripple Carry Adder
+// Module Name: full_adder
+// Project Name: Lab 5
+// Target Devices: Basys3
+// Description: Designing, simulating, and testing the Ripple Carry Adder
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
