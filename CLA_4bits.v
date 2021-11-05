@@ -23,42 +23,31 @@ module CLA_4bits(
     
     wire [3:0] G, P, S; // Generate, Propagate, Sum results here
     wire [4:0] C; // Carry bits
-    //wire [3:0] Sum;
-    //wire Cout;
     assign C[0] = Cin;
     
-    //// Propagates
-    xor xor0(P[0], A[0], B[0]); // P0 = a0 ^ b0
-    xor xor1(P[1], A[1], B[1]); // P1 = a1 ^ b1
-    xor xor2(P[2], A[2], B[2]); // P2 = a2 ^ b2
-    xor xor3(P[3], A[3], B[3]); // P3 = a3 ^ b3
+    // Generate
+    assign G[0] = A[0] & B[0];
+    assign G[1] = A[1] & B[1];
+    assign G[2] = A[2] & B[2];
+    assign G[3] = A[3] & B[3];
     
-    //// Carrys
-    wire ab0, pc0;
-    and and0(ab0, A[0], B[0]); // a0 * b0
-    and and1(pc0, P[0], C[0]); // P0 * C0
-    or or0(C[1], ab0, pc0); // C1
+    // Propagate
+    assign P[0] = A[0] ^ B[0];
+    assign P[1] = A[1] ^ B[1];
+    assign P[2] = A[2] ^ B[2];
+    assign P[3] = A[3] ^ B[3];
     
-    wire ab1, pc1;
-    and and2(ab1, A[1], B[1]); // a1 * b1
-    and and3(pc1, P[1], C[1]); // P1 * C1
-    or or1(C[2], ab1, pc1); // C2
+    // Carrys
+    assign C[1] = (P[0] & C[0]) | G[0];
+    assign C[2] = (P[1]&P[0] & C[0]) | (P[1] & G[0]) | G[1];
+    assign C[3] = (P[2]&P[1]&P[0] & C[0]) | (P[2]&P[1] & G[0]) | (P[2] & G[1]) | G[2];
+    assign C[4] = (P[3]&P[2]&P[1]&P[0] & C[0]) | (P[3]&P[2]&P[1] & G[0]) | (P[3]&P[2] & G[1]) | (P[3] & G[2]) | G[3];
     
-    wire ab2, pc2;
-    and and4(ab2, A[2], B[2]); // a2 * b2
-    and and5(pc2, P[2], C[2]); // P2 * C2
-    or or2(C[3], ab2, pc2); // C3
-    
-    wire ab3, pc3;
-    and and6(ab3, A[3], B[3]); // a3 * b3
-    and and7(pc3, P[3], C[3]); // P3 * C3
-    or or3(C[4], ab3, pc3); // C4
-    
-    //// Sums
-    xor xor4(S[0], P[0], C[0]); // S0
-    xor xor5(S[1], P[1], C[1]); // S1
-    xor xor6(S[2], P[2], C[2]); // S2
-    xor xor7(S[3], P[3], C[3]); // S3
+    // Sums
+    assign S[0] = P[0] ^ C[0];
+    assign S[1] = P[1] ^ C[1];
+    assign S[2] = P[2] ^ C[2];
+    assign S[3] = P[3] ^ C[3];
     
     // Module instantiation of register_logic 
     register_logic c5 (
