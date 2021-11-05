@@ -1,2 +1,2 @@
-# Lab-5
-Designing, simulating, and testing the 3 parts of lab 5
+# Carry Lookahead Adder
+Designing, simulating, and testing the Carry Lookahead Adder
