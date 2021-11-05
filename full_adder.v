@@ -20,6 +20,7 @@ module full_adder(
 
 //// Carry-Out Bit
 // AND
+wire bc, ac, ab;
 and and0(bc, B, Cin);
 and and1(ac, A, Cin);
 and and2(ab, A, B);
@@ -29,6 +30,6 @@ or or0(Cout, bc, ac, ab);
 
 //// Sum Bit
 // OR
-xor xor0(S, A, B, C);
+xor xor0(S, A, B, Cin);
 
 endmodule

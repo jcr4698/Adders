@@ -27,9 +27,17 @@ module register_logic(
     output reg [4:0] Q
 );
 
+reg [4:0] REG;
+
 always @(posedge clk)
 begin
     if(enable == 1'b1)
-        
+        REG[4:0] <= Data;
 end
+
+always @(*)
+begin
+Q <= REG[4:0];
+end
+
 endmodule
