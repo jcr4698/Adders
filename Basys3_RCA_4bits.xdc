@@ -29,13 +29,13 @@ set_property PACKAGE_PIN V2 [get_ports {Cin}]
 ## LEDs
 set_property PACKAGE_PIN U16 [get_ports {Q[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Q[0]}]
-set_property PACKAGE_PIN E19 [get_ports {led[1]}]					
+set_property PACKAGE_PIN E19 [get_ports {Q[1]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Q[1]}]
-set_property PACKAGE_PIN U19 [get_ports {led[2]}]					
+set_property PACKAGE_PIN U19 [get_ports {Q[2]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Q[2]}]
-set_property PACKAGE_PIN V19 [get_ports {led[3]}]					
+set_property PACKAGE_PIN V19 [get_ports {Q[3]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Q[3]}]
-set_property PACKAGE_PIN W18 [get_ports {led[4]}]					
+set_property PACKAGE_PIN W18 [get_ports {Q[4]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Q[4]}]
 
 ##Buttons
